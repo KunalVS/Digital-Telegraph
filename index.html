@@ -10,29 +10,61 @@
 </head>
 
 <body>
+    <div id="preloader">
+        <div class="preloader-title">Digital Telegraph</div>
+        
+        <div class="morse-container">
+            <!-- SOS in Morse Code: • • • — — — • • • -->
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <div class="loading-text">Loading...</div>
+    </div>
 
     <div class="nav">
-        <h1>Morse Code Generator</h1>
+        <h1>Digital Telegraph</h1>
         <div class="items"><p><a href="#">Generate</a></p>
-        <p><a href="#About" >About</a></p></div>
+     <p><a href="#Decrypt">Decrypt</a></p>
+    <p><a href="#About" >About</a></p></div>
+      
+       
     </div>
     <div class="main">
-        <h3>Convert letters and numbers into Morse code
-            <br> -a cipher used since the 1840s...
+        <h3>Morse Code Generator
         </h3>
 
         <div class="container">
 
             <input type="text" placeholder="Type Something...">
-            <button>Generate Morse Code</button>
+            <button>Generate</button>
 
-            <div class="answer">
+            <div class="answer1">
                 <!--Morse code will generate here-->
 
-                Code will be displayed here
+                Code will be displayed here...
             </div>
         </div>
+         <div class="decoder">
+            <h3 id="Decrypt">Morse Code Decoder</h3>
+          <input type="text" placeholder="Enter SoS..." id="decoder">
+            <button id="decode">Decrypt</button>
+
+            <div class="answer2">
+                <!--Morse code will generate here-->
+
+                Text will be displayed here...
+            </div>
     </div>
+    </div>
+    
     <h2 id="About">What is Morse Code?</h2>
     <div class="info">
 
@@ -69,11 +101,26 @@
             </p>
         </div>
     </div>
+   
     <footer>
         <p>Created by Kunal Shirke <br>
          Copyright &copy; 2025 </p>
     </footer>
     <script src="script.js"></script>
+     <script>
+        // Preloader functionality
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            
+            setTimeout(function() {
+                preloader.classList.add('fade-out');
+                
+                setTimeout(function() {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 2500); // Show for 2.5 seconds for demo
+        });
+    </script>
 </body>
 
 </html>
